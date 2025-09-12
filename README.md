@@ -1,0 +1,1 @@
+Copied from Claude Desktop's interpreter (September 2025) skills repository (/mnt/skills/public)
