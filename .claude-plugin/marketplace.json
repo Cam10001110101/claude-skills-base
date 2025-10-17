@@ -1,11 +1,11 @@
 {
   "name": "anthropic-agent-skills",
   "owner": {
-    "name": "Keith Lazuka",
-    "email": "klazuka@anthropic.com"
+    "name": "Cameron Rohn",
+    "email": "github@cameronrohn.com"
   },
   "metadata": {
-    "description": "Anthropic example skills",
+    "description": "Claude's container skills",
     "version": "1.0.0"
   },
   "plugins": [
@@ -15,10 +15,10 @@
       "source": "./",
       "strict": false,
       "skills": [
-        "./document-skills/xlsx",
-        "./document-skills/docx",
-        "./document-skills/pptx",
-        "./document-skills/pdf"
+        "./mnt/skills/public/xlsx",
+        "./mnt/skills/public/docx",
+        "./mnt/skills/public/pptx",
+        "./mnt/skills/public/pdf"
       ]
     },
     {
@@ -27,16 +27,16 @@
       "source": "./",
       "strict": false,
       "skills": [
-        "./skill-creator",
-        "./mcp-builder",
-        "./canvas-design",
-        "./algorithmic-art",
-        "./internal-comms",
-        "./webapp-testing",
-        "./artifacts-builder",
-        "./slack-gif-creator",
-        "./theme-factory",
-        "./brand-guidelines"
+        "./mnt/skills/examples/skill-creator",
+        "./mnt/skills/examples/mcp-builder",
+        "./mnt/skills/examples/canvas-design",
+        "./mnt/skills/examples/algorithmic-art",
+        "./mnt/skills/examples/internal-comms",
+        "./mnt/skills/examples/webapp-testing",
+        "./mnt/skills/examples/artifacts-builder",
+        "./mnt/skills/examples/slack-gif-creator",
+        "./mnt/skills/examples/theme-factory",
+        "./mnt/skills/examples/brand-guidelines"
       ]
     }
   ]
