@@ -1,6 +1,360 @@
-# Office Suite Toolkit
+# Claude's Skills
 
-A comprehensive Python and JavaScript/TypeScript toolkit for creating, editing, and analyzing Microsoft Office documents (Word, Excel, PowerPoint) and PDFs.
+A comprehensive collection of specialized skills and capabilities for Claude Code, Claude AI, and Claude API. 
+
+## Quick Start (Claude Code)
+  
+```bash
+/plugin marketplace add Cam10001110101/claude-skills-base
+```
+
+## 📁 Repository Structure
+
+```
+/mnt/skills
+├── public/                      # Production-ready core skills
+│   │
+│   ├── docx/                    # Word document creation & editing
+│   │   ├── SKILL.md             # Main documentation
+│   │   ├── docx-js.md           # JavaScript library guide
+│   │   ├── ooxml.md             # OOXML format reference
+│   │   ├── ooxml/               # OOXML specifications
+│   │   └── scripts/             # Helper utilities
+│   │
+│   ├── pdf/                     # PDF manipulation & forms
+│   │   ├── SKILL.md             # Main documentation
+│   │   ├── FORMS.md             # Form filling guide
+│   │   ├── REFERENCE.md         # API reference
+│   │   └── scripts/             # Helper utilities
+│   │
+│   ├── pptx/                    # PowerPoint presentation creation
+│   │   ├── SKILL.md             # Main documentation
+│   │   ├── html2pptx.md         # HTML to PowerPoint conversion
+│   │   ├── css.md               # Styling guide
+│   │   ├── ooxml.md             # OOXML format reference
+│   │   ├── ooxml/               # OOXML specifications
+│   │   └── scripts/             # Helper utilities
+│   │
+│   └── xlsx/                    # Excel spreadsheet creation
+│       ├── SKILL.md             # Main documentation
+│       └── recalc.py            # Formula recalculation
+│
+└── examples/                    # Specialized domain skills
+    │
+    ├── algorithmic-art/
+    │   ├── SKILL.md
+    │   └── templates/           # Generator & viewer templates
+    │
+    ├── artifacts-builder/
+    │   ├── SKILL.md
+    │   └── scripts/             # Bundling & initialization
+    │       └── shadcn-components.tar.gz
+    │
+    ├── brand-guidelines/
+    │   └── SKILL.md
+    │
+    ├── canvas-design/
+    │   ├── SKILL.md
+    │   └── canvas-fonts/        # 40+ TrueType fonts (TTF)
+    │       ├── GeistMono, IBMPlex, JetBrains, WorkSans
+    │       ├── Crimson, Lora, LibreBaskerville
+    │       └── Outfit, Instrument, NationalPark, etc.
+    │
+    ├── code-to-music/
+    │   ├── SKILL.md
+    │   ├── electronic-music-pipeline.md
+    │   ├── traditional-music-pipeline.md
+    │   └── scripts/             # MIDI rendering & utilities
+    │
+    ├── generative-art/
+    │   ├── SKILL.md
+    │   └── templates/           # Generator & viewer templates
+    │
+    ├── internal-comms/
+    │   ├── SKILL.md
+    │   └── examples/            # Newsletter, FAQ, update templates
+    │
+    ├── mcp-builder/
+    │   ├── SKILL.md
+    │   ├── reference/           # Best practices & guides
+    │   │   ├── node_mcp_server.md
+    │   │   └── python_mcp_server.md
+    │   └── scripts/             # Connection testing & evaluation
+    │
+    ├── mcp-server/
+    │   ├── SKILL.md
+    │   ├── reference/           # Implementation guides
+    │   └── scripts/             # Server utilities
+    │
+    ├── music-generation/
+    │   ├── SKILL.md
+    │   └── scripts/             # Synthesizers, MIDI tools
+    │       ├── drum_synthesizer.py
+    │       └── melodic_synthesizer.py
+    │
+    ├── skill-creator/
+    │   ├── SKILL.md
+    │   └── scripts/             # Skill scaffolding tools
+    │       ├── init_skill.py
+    │       └── package_skill.py
+    │
+    ├── slack-gif-creator/
+    │   ├── SKILL.md
+    │   ├── core/                # Visual effects engine
+    │   │   ├── gif_builder.py
+    │   │   ├── typography.py
+    │   │   └── visual_effects.py
+    │   └── templates/           # 13 animation templates
+    │       ├── bounce, explode, fade, flip
+    │       ├── spin, zoom, wiggle, shake, etc.
+    │
+    ├── template-skill/
+    │   └── SKILL.md             # Minimal template
+    │
+    ├── theme-factory/
+    │   ├── SKILL.md
+    │   ├── theme-showcase.pdf
+    │   └── themes/              # 10 pre-built themes
+    │       ├── midnight-galaxy.md
+    │       ├── ocean-depths.md
+    │       └── tech-innovation.md, etc.
+    │
+    └── webapp-testing/
+        ├── SKILL.md
+        ├── examples/            # Testing patterns
+        └── scripts/             # Automation helpers
+```
+
+## 🎯 About Agent Skills
+
+This repository follows Anthropic's [Agent Skills](https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills) pattern. Agent Skills are modular packages that extend Claude's capabilities by providing domain-specific knowledge, instructions, and executable tools.
+
+### How Skills Work
+
+As Anthropic explains, "Claude is powerful, but real work requires procedural knowledge and organizational context." Skills transform general-purpose agents into specialized ones through **progressive disclosure**:
+
+1. **Metadata Level**: Each skill includes a `SKILL.md` file with name and description, pre-loaded so Claude knows when to use it
+2. **Core Content**: If relevant, Claude loads the full `SKILL.md` documentation
+3. **Supplementary Files**: Additional references load only when needed
+
+This keeps context efficient while allowing unbounded skill complexity.
+
+## 🚀 Try in Claude Code, Claude.ai, and the API
+
+### Claude Code
+
+You can register this repository as a Claude Code Plugin from the marketplace by running the following command in Claude Code:
+
+```
+/plugin marketplace add Cam10001110101/claude-skills-base
+```
+
+After installing the plugin, you can use the skills by simply mentioning them. For example:
+
+```
+"use the pdf skill to extract the form fields from path/to/some-file.pdf"
+"use the xlsx skill to create a financial model with formulas"
+"use the pptx skill to create a presentation from this content"
+```
+
+### Claude.ai
+
+Skills are available directly in Claude.ai conversations. Simply reference them when working with documents:
+
+- Excel tasks are automatically handled with the xlsx skill
+- PowerPoint creation uses the pptx skill
+- PDF processing leverages the pdf skill
+- Word documents use the docx skill
+
+### Claude Agent SDK
+
+Integrate skills into custom agent workflows using the Claude Agent SDK. Skills are automatically discovered and loaded when available in the agent's environment.
+
+### API Integration
+
+See the [API Integration section](#api-integration) below for details on using skills with the Claude Messages API.
+
+For more information, see the [Agent Skills documentation](https://docs.claude.com/en/docs/agents-and-tools/agent-skills/overview) and [examples](https://github.com/anthropics/claude-cookbooks/tree/main/skills).
+
+## 📊 How Skills Work in Practice
+
+### PowerPoint Generation Flow
+
+When you ask Claude to create a presentation, here's the automated workflow:
+
+#### Step 1: User Input
+Receive content request for presentation creation
+```
+Create a .pptx using this content: [EXAMPLE_CONTENT]
+```
+
+#### Step 2: Skill Discovery
+Claude scans available PowerPoint skills and templates in the system
+```bash
+/mnt/skills/public/pptx/
+├── SKILL.md              # Main documentation
+├── pptxgenjs.md          # PptxGenJS library guide
+├── ooxml.md              # OOXML format reference
+└── scripts/              # PowerPoint utilities
+```
+
+#### Step 3: Documentation Review
+Claude reads the PptxGenJS documentation to understand API and formatting options, reviewing:
+- PptxGenJS API Reference
+- OOXML Schemas
+- Layout and styling options
+
+#### Step 4: Code Generation
+Claude creates a JavaScript file with presentation logic, styling, and content structure:
+
+```javascript
+const pptxgen = require("pptxgenjs");
+const { renderToStaticMarkup } = require("react-dom/server");
+const React = require("react");
+const { FiFileText, FiDatabase, FiCpu } = require("react-icons/fi");
+const sharp = require("sharp");
+
+// Create presentation
+let pres = new pptxgen();
+pres.layout = 'LAYOUT_16x9';
+pres.author = 'Document Processing Solutions';
+pres.title = 'Document Processing Pipelines & Automation';
+
+// Color palette
+const colors = {
+  primary: "185087",     // Deep blue
+  secondary: "2F9477",   // Teal
+  accent: "F56D40",      // Orange
+  text: "2C3E50",        // Dark gray
+  white: "FFFFFF"
+};
+
+// Helper function to create icons
+async function createIcon(IconComponent, color, size = 100) {
+  const svgString = renderToStaticMarkup(
+    React.createElement(IconComponent, {
+      size, color: `#${color}`, strokeWidth: 2
+    })
+  );
+  const buffer = await sharp(Buffer.from(svgString)).png().toBuffer();
+  return `data:image/png;base64,${buffer.toString('base64')}`;
+}
+
+// Create slides
+async function createPresentation() {
+  const icons = await createAllIcons();
+
+  // Slide 1: Title Slide
+  let slide1 = pres.addSlide();
+  slide1.background = { color: colors.primary };
+  slide1.addText("Document Processing Pipelines", {
+    x: 0.5, y: 1.5, w: 9, h: 1,
+    fontSize: 48, bold: true, color: colors.white,
+    fontFace: "Arial", align: "center"
+  });
+
+  // Add more slides with content, charts, and icons...
+
+  // Save presentation
+  await pres.writeFile({
+    fileName: "/mnt/user-data/outputs/document_processing_pipelines.pptx"
+  });
+}
+
+createPresentation().catch(console.error);
+```
+
+#### Step 5: Execution
+Run the generated script to build the presentation
+```bash
+cd /home/claude && node create_presentation.js
+# Output: Presentation created successfully!
+```
+
+#### Step 6: Verification
+Confirm successful file creation and validate output
+```bash
+ls -lh /mnt/user-data/outputs/document_processing_pipelines.pptx
+# Output: -rw-r--r-- 1 999 root 174K document_processing_pipelines.pptx
+```
+
+#### Final Output
+**Professional presentation ready for delivery**: `document_processing_pipelines.pptx`
+
+### Key Workflow Benefits
+
+- **Automated Discovery**: Claude automatically finds and loads relevant skills
+- **Documentation-Driven**: Skills include comprehensive guides for proper API usage
+- **Code Generation**: Creates production-ready scripts with proper error handling
+- **Quality Assurance**: Validates output and confirms successful creation
+
+### API Integration
+
+Skills can be used with the Claude Messages API through the code execution tool. For detailed implementation guidance, see the [Skills API Guide](https://docs.claude.com/en/api/skills-guide).
+
+**Quick Start Example:**
+
+```python
+import anthropic
+
+client = anthropic.Anthropic(api_key="your-api-key")
+
+response = client.messages.create(
+    model="claude-sonnet-4-5-20250929",
+    max_tokens=4096,
+    betas=["code-execution-2025-08-25", "skills-2025-10-02"],
+    container={
+        "skills": [
+            {"type": "anthropic", "skill_id": "xlsx", "version": "latest"},
+            {"type": "anthropic", "skill_id": "pptx", "version": "latest"}
+        ]
+    },
+    messages=[
+        {"role": "user", "content": "Create a financial spreadsheet with charts"}
+    ],
+    tools=[{"type": "code_execution_20250825", "name": "code_execution"}]
+)
+```
+
+**Key Points:**
+
+- **Skills available**: `xlsx`, `docx`, `pptx`, `pdf` (use `"version": "latest"` or specific dates like `"20251013"`)
+- **Up to 8 skills per request**: Mix and match skills as needed
+- **Required beta headers**: `code-execution-2025-08-25`, `skills-2025-10-02`
+- **Custom skills**: Upload your own skills (max 8MB) using the Skills API
+- **No network access**: Skills run in a sandboxed environment
+
+**Creating Custom Skills:**
+
+```python
+from anthropic.lib import files_from_dir
+
+skill = client.beta.skills.create(
+    display_title="Financial Analysis",
+    files=files_from_dir("/path/to/skill"),
+    betas=["skills-2025-10-02"]
+)
+
+# Use custom skill with its generated ID
+response = client.messages.create(
+    model="claude-sonnet-4-5-20250929",
+    max_tokens=4096,
+    betas=["code-execution-2025-08-25", "skills-2025-10-02"],
+    container={
+        "skills": [
+            {"type": "custom", "skill_id": skill.id}
+        ]
+    },
+    messages=[{"role": "user", "content": "Analyze quarterly financials"}],
+    tools=[{"type": "code_execution_20250825", "name": "code_execution"}]
+)
+```
+
+---
+
+# Document Suite (Public)
+
+Production-ready skills for Microsoft Office documents and PDFs. These provide comprehensive Python and JavaScript/TypeScript toolkits for creating, editing, and analyzing professional documents.
 
 ## Features
 
@@ -34,7 +388,7 @@ A comprehensive Python and JavaScript/TypeScript toolkit for creating, editing, 
 - OCR support for scanned documents
 - Convert PDFs to images
 
-## Installation
+## Installation (Core Skills)
 
 ### System Requirements
 
@@ -286,18 +640,155 @@ Remember coordinate transformation:
 - Image coordinates: origin at top-left
 - PDF coordinates: origin at bottom-left
 
-## Contributing
+# Specialized Skills (Examples)
 
-This toolkit was originally part of Claude Desktop's interpreter skills repository. Contributions and improvements are welcome.
+Advanced domain-specific skills for creative, technical, and business workflows.
 
-## License
+## 🎨 Creative & Design
 
-See individual script headers for licensing information.
+### algorithmic-art
+- Generative art through mathematical algorithms
+- Procedural pattern generation
+- Parametric design systems
 
-## Support
+### canvas-design
+- HTML5 Canvas-based visual design
+- Interactive graphics and animations
+- Dynamic layout generation
 
-For detailed documentation on specific features:
-- Excel: See `xlsx/SKILL.md`
-- Word: See `docx/SKILL.md`
-- PowerPoint: See `pptx/SKILL.md`
-- PDF: See `pdf/SKILL.md` and `pdf/FORMS.md`
+### generative-art
+- Creative coding and artistic expression
+- Rule-based art generation
+- Style transfer and composition
+
+### theme-factory
+- Complete theme system generation
+- Color palette creation
+- Typography and styling frameworks
+
+## 💻 Development & Technical
+
+### artifacts-builder
+- Claude artifact creation toolkit
+- Component library development
+- Reusable pattern generation
+
+### mcp-builder
+- Model Context Protocol integration
+- Tool definition and implementation
+- API wrapper generation
+
+### mcp-server
+- MCP server implementation
+- Protocol handling and routing
+- Client-server architecture
+
+### skill-creator
+- Meta-skill for authoring new skills
+- Template generation
+- Best practice codification
+
+### webapp-testing
+- Automated web application testing
+- Test case generation
+- Quality assurance workflows
+
+## 🎵 Media & Communication
+
+### code-to-music
+- Convert code structures to musical compositions
+- Algorithm sonification
+- Pattern-based music generation
+
+### music-generation
+- Procedural music composition
+- MIDI generation and manipulation
+- Audio synthesis workflows
+
+### slack-gif-creator
+- Automated GIF generation for Slack
+- Reaction GIF creation
+- Custom animation workflows
+
+### internal-comms
+- Internal communication templates
+- Announcement formatting
+- Team update structures
+
+## 🏢 Business
+
+### brand-guidelines
+- Brand identity documentation
+- Style guide creation
+- Visual language standardization
+
+### template-skill
+- Minimal skill template structure
+- Starting point for custom skills
+- Skeleton implementation
+
+## 🔧 Skill Architecture
+
+All skills follow a standardized structure:
+
+```
+skill-name/
+├── SKILL.md              # Primary documentation and instructions
+├── examples/             # Usage examples and templates
+├── utils/                # Helper functions and utilities
+└── tests/                # Validation and test cases
+```
+
+### SKILL.md Format
+
+Every skill includes comprehensive documentation:
+
+1. **Overview** - Purpose and capabilities
+2. **Prerequisites** - Required tools and dependencies
+3. **Usage Instructions** - Step-by-step workflows
+4. **Best Practices** - Optimization tips and patterns
+5. **Examples** - Real-world use cases
+6. **Troubleshooting** - Common issues and solutions
+
+## 💡 Design Philosophy
+
+### Modularity
+Each skill is self-contained and focused on a specific domain, enabling composition and reuse.
+
+### Best Practices First
+Skills encode proven workflows developed through extensive testing and iteration.
+
+### Quality Over Speed
+Prioritize professional-quality outputs over quick-and-dirty solutions.
+
+### Progressive Enhancement
+Start with simple use cases and progressively handle complex scenarios.
+
+---
+
+## 📚 References & Resources
+
+### Documentation
+- [Agent Skills Documentation](https://docs.claude.com/en/docs/agents-and-tools/agent-skills/overview) - Official Anthropic documentation
+- [Skills API Guide](https://docs.claude.com/en/api/skills-guide) - API integration guide
+- [Agent Skills Blog Post](https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills) - Equipping agents for the real world
+- [Claude Cookbooks - Skills](https://github.com/anthropics/claude-cookbooks/tree/main/skills) - Examples and tutorials
+
+### Source Files
+- `Process Flow.md` - Detailed workflow example for PowerPoint generation
+- `example-skils-flow-diagram.html` - Visual flow diagram for skill execution
+- `CLAUDE.md` - Development guidance for this repository
+
+### Core Skill Documentation
+Each skill includes comprehensive documentation in its `SKILL.md` file:
+- `/mnt/skills/public/xlsx/SKILL.md` - Excel spreadsheet creation
+- `/mnt/skills/public/docx/SKILL.md` - Word document processing
+- `/mnt/skills/public/pptx/SKILL.md` - PowerPoint presentation creation
+- `/mnt/skills/public/pdf/SKILL.md` - PDF manipulation
+
+### Additional Resources
+- **Office Open XML**: Format specifications in `/mnt/skills/public/*/ooxml/`
+- **Reference Guides**: Format-specific guides (FORMS.md, REFERENCE.md, html2pptx.md, etc.)
+- **Example Skills**: 15+ specialized skills in `/mnt/skills/examples/`
+
+---
