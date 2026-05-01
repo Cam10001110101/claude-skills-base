@@ -41,88 +41,17 @@ A comprehensive collection of specialized skills and capabilities for Claude Cod
 │
 └── examples/                    # Specialized domain skills
     │
-    ├── algorithmic-art/
-    │   ├── SKILL.md
-    │   └── templates/           # Generator & viewer templates
-    │
-    ├── artifacts-builder/
-    │   ├── SKILL.md
-    │   └── scripts/             # Bundling & initialization
-    │       └── shadcn-components.tar.gz
-    │
-    ├── brand-guidelines/
-    │   └── SKILL.md
-    │
-    ├── canvas-design/
-    │   ├── SKILL.md
-    │   └── canvas-fonts/        # 40+ TrueType fonts (TTF)
-    │       ├── GeistMono, IBMPlex, JetBrains, WorkSans
-    │       ├── Crimson, Lora, LibreBaskerville
-    │       └── Outfit, Instrument, NationalPark, etc.
-    │
     ├── code-to-music/
     │   ├── SKILL.md
     │   ├── electronic-music-pipeline.md
     │   ├── traditional-music-pipeline.md
     │   └── scripts/             # MIDI rendering & utilities
     │
-    ├── generative-art/
-    │   ├── SKILL.md
-    │   └── templates/           # Generator & viewer templates
-    │
-    ├── internal-comms/
-    │   ├── SKILL.md
-    │   └── examples/            # Newsletter, FAQ, update templates
-    │
-    ├── mcp-builder/
-    │   ├── SKILL.md
-    │   ├── reference/           # Best practices & guides
-    │   │   ├── node_mcp_server.md
-    │   │   └── python_mcp_server.md
-    │   └── scripts/             # Connection testing & evaluation
-    │
-    ├── mcp-server/
-    │   ├── SKILL.md
-    │   ├── reference/           # Implementation guides
-    │   └── scripts/             # Server utilities
-    │
-    ├── music-generation/
-    │   ├── SKILL.md
-    │   └── scripts/             # Synthesizers, MIDI tools
-    │       ├── drum_synthesizer.py
-    │       └── melodic_synthesizer.py
-    │
-    ├── skill-creator/
-    │   ├── SKILL.md
-    │   └── scripts/             # Skill scaffolding tools
-    │       ├── init_skill.py
-    │       └── package_skill.py
-    │
-    ├── slack-gif-creator/
-    │   ├── SKILL.md
-    │   ├── core/                # Visual effects engine
-    │   │   ├── gif_builder.py
-    │   │   ├── typography.py
-    │   │   └── visual_effects.py
-    │   └── templates/           # 13 animation templates
-    │       ├── bounce, explode, fade, flip
-    │       ├── spin, zoom, wiggle, shake, etc.
-    │
-    ├── template-skill/
-    │   └── SKILL.md             # Minimal template
-    │
-    ├── theme-factory/
-    │   ├── SKILL.md
-    │   ├── theme-showcase.pdf
-    │   └── themes/              # 10 pre-built themes
-    │       ├── midnight-galaxy.md
-    │       ├── ocean-depths.md
-    │       └── tech-innovation.md, etc.
-    │
-    └── webapp-testing/
+    └── music-generation/
         ├── SKILL.md
-        ├── examples/            # Testing patterns
-        └── scripts/             # Automation helpers
+        └── scripts/             # Synthesizers, MIDI tools
+            ├── drum_synthesizer.py
+            └── melodic_synthesizer.py
 ```
 
 ## 🎯 About Agent Skills
@@ -642,56 +571,7 @@ Remember coordinate transformation:
 
 # Specialized Skills (Examples)
 
-Advanced domain-specific skills for creative, technical, and business workflows.
-
-## 🎨 Creative & Design
-
-### algorithmic-art
-- Generative art through mathematical algorithms
-- Procedural pattern generation
-- Parametric design systems
-
-### canvas-design
-- HTML5 Canvas-based visual design
-- Interactive graphics and animations
-- Dynamic layout generation
-
-### generative-art
-- Creative coding and artistic expression
-- Rule-based art generation
-- Style transfer and composition
-
-### theme-factory
-- Complete theme system generation
-- Color palette creation
-- Typography and styling frameworks
-
-## 💻 Development & Technical
-
-### artifacts-builder
-- Claude artifact creation toolkit
-- Component library development
-- Reusable pattern generation
-
-### mcp-builder
-- Model Context Protocol integration
-- Tool definition and implementation
-- API wrapper generation
-
-### mcp-server
-- MCP server implementation
-- Protocol handling and routing
-- Client-server architecture
-
-### skill-creator
-- Meta-skill for authoring new skills
-- Template generation
-- Best practice codification
-
-### webapp-testing
-- Automated web application testing
-- Test case generation
-- Quality assurance workflows
+Domain-specific example skills bundled with this repo.
 
 ## 🎵 Media & Communication
 
@@ -704,28 +584,6 @@ Advanced domain-specific skills for creative, technical, and business workflows.
 - Procedural music composition
 - MIDI generation and manipulation
 - Audio synthesis workflows
-
-### slack-gif-creator
-- Automated GIF generation for Slack
-- Reaction GIF creation
-- Custom animation workflows
-
-### internal-comms
-- Internal communication templates
-- Announcement formatting
-- Team update structures
-
-## 🏢 Business
-
-### brand-guidelines
-- Brand identity documentation
-- Style guide creation
-- Visual language standardization
-
-### template-skill
-- Minimal skill template structure
-- Starting point for custom skills
-- Skeleton implementation
 
 ## 🔧 Skill Architecture
 
