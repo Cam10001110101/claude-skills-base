@@ -23,20 +23,12 @@
     },
     {
       "name": "example-skills",
-      "description": "Collection of example skills demonstrating various capabilities including skill creation, MCP building, visual design, algorithmic art, internal communications, web testing, artifact building, Slack GIFs, and theme styling",
+      "description": "Collection of example skills for music generation and code-to-music conversion",
       "source": "./",
       "strict": false,
       "skills": [
-        "./mnt/skills/examples/skill-creator",
-        "./mnt/skills/examples/mcp-builder",
-        "./mnt/skills/examples/canvas-design",
-        "./mnt/skills/examples/algorithmic-art",
-        "./mnt/skills/examples/internal-comms",
-        "./mnt/skills/examples/webapp-testing",
-        "./mnt/skills/examples/artifacts-builder",
-        "./mnt/skills/examples/slack-gif-creator",
-        "./mnt/skills/examples/theme-factory",
-        "./mnt/skills/examples/brand-guidelines"
+        "./mnt/skills/examples/code-to-music",
+        "./mnt/skills/examples/music-generation"
       ]
     }
   ]
